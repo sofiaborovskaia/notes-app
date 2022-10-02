@@ -16,7 +16,6 @@ function App() {
 
 	useEffect(() => {
 		localStorage.setItem("notes", JSON.stringify(notes));
-		// console.log(JSON.stringify(notes[0].body));
 	}, [notes]);
 
 	function createNewNote() {
@@ -29,13 +28,17 @@ function App() {
 	}
 
 	function updateNote(text) {
-		setNotes((oldNotes) =>
-			oldNotes.map((oldNote) => {
-				return oldNote.id === currentNoteId
-					? { ...oldNote, body: text }
-					: oldNote;
-			}),
-		);
+		setNotes((prevNotes) => {
+			let newArr = [];
+			prevNotes.forEach((currentNote) => {
+				if (currentNote.id === currentNoteId) {
+					newArr.unshift({ ...currentNote, body: text });
+				} else {
+					newArr.push(currentNote);
+				}
+			});
+			return newArr;
+		});
 	}
 
 	function findCurrentNote() {
