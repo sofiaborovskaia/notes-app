@@ -71,8 +71,13 @@ function App() {
 				</Split>
 			) : (
 				<div className="no-notes">
-					<h1>You have no notes</h1>
-					<button className="first-note" onClick={createNewNote}>
+					<img
+						className="first-note-img"
+						src={require("./images/notebook.png")}
+						alt="notebook"
+					></img>
+					<h1>Welcome to notebook</h1>
+					<button className="first-note-btn" onClick={createNewNote}>
 						Create one now
 					</button>
 				</div>

@@ -1,3 +1,16 @@
+@font-face {
+	font-family: "Laica Italic";
+	src: url(../assets/fonts/ABCLaicaBItalicVariable-Trial.woff) format("woff");
+}
+@font-face {
+	font-family: "Laica";
+	src: url(../assets/fonts/ABCLaicaBVariable-Trial.woff) format("woff");
+}
+@font-face {
+	font-family: "Alpa";
+	src: url(../assets/fonts/GT-Alpina-Italic-VAR-Trial.ttf) format("woff");
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -5,7 +18,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "Karla", sans-serif;
+	font-family: "Laica", sans-serif;
 }
 
 button:focus {
@@ -52,14 +65,69 @@ button:focus {
 	width: 30px;
 }
 
-.first-note {
-	cursor: pointer;
-	background-color: #4a4e74;
-	border: none;
-	color: white;
-	border-radius: 3px;
-	padding: 1rem;
+.first-note-img {
+	width: 130px;
 }
+
+.first-note-btn {
+	position: relative;
+	cursor: pointer;
+	background-color: whitesmoke;
+	border: 1px solid green;
+	color: green;
+	border-radius: 50%;
+	padding: 1rem;
+	transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+	z-index: 1;
+}
+
+.first-note-btn:after {
+	content: "";
+	position: absolute;
+	background: white;
+	box-shadow: #e39dff -14px 0px 15px 0px, #ffff9c 14px 0px 15px 0px;
+	border-radius: 50%;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+
+	-webkit-transition: box-shadow 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
+		opacity 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+	transition: box-shadow 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
+		opacity 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.first-note-btn:hover {
+	scale: 1.1;
+
+	color: black;
+}
+
+.first-note-btn:hover:after {
+	opacity: 1;
+	box-shadow: #e39dff -14px 0px 15px 8px, #ffff9c 14px 0px 15px 8px;
+}
+
+/* @keyframes mymove {
+	0% {
+		top: 0px;
+	}
+	25% {
+		top: 200px;
+	}
+	50% {
+		top: 100px;
+	}
+	75% {
+		top: 200px;
+	}
+	100% {
+		top: 0px;
+	}
+} */
 
 .editor {
 	width: 80%;
