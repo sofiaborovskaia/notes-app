@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
 import Split from "react-split";
-// import { data } from "./data";
 import { nanoid } from "nanoid";
 import "./style.css";
 
@@ -70,15 +69,15 @@ function App() {
 					)}
 				</Split>
 			) : (
-				<div className="no-notes">
+				<div className="start-page">
 					<img
-						className="first-note-img"
+						className="start-page__img"
 						src={require("./images/notebook.png")}
 						alt="notebook"
 					></img>
-					<h1>Welcome to notebook</h1>
-					<button className="first-note-btn" onClick={createNewNote}>
-						Create one now
+					<h1 className="start-page__heading">Welcome to notebook</h1>
+					<button className="start-page__button" onClick={createNewNote}>
+						Create first note
 					</button>
 				</div>
 			)}
