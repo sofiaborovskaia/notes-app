@@ -1,3 +1,5 @@
+import { ReactComponent as DeleteIcon } from "../images/delete-icon.svg";
+
 function Sidebar(props) {
 	const noteElements = props.notes.map((note, index) => (
 		<li
@@ -12,7 +14,7 @@ function Sidebar(props) {
 				className="notes__delete-button"
 				onClick={(event) => props.deleteNote(event, note.id)}
 			>
-				<i className="gg-trash trash-icon"></i>
+				<DeleteIcon />
 			</button>
 		</li>
 	));
