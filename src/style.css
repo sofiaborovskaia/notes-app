@@ -36,6 +36,21 @@ button:focus {
 	outline: none;
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar {
+	width: 2rem;
+}
+
+::-webkit-scrollbar-track {
+	border-left: 1px black solid;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #e39dff;
+	border-left: 1px black solid;
+}
+
 /* Start page */
 .start-page {
 	width: 100%;
@@ -115,7 +130,7 @@ button:focus {
 	align-items: center;
 
 	padding-inline: var(--notes-padding);
-	height: 4rem;
+	min-height: 4rem;
 }
 
 .sidebar__new-note-button {
@@ -125,21 +140,6 @@ button:focus {
 	font-weight: 100;
 	font-family: times new roman;
 	cursor: pointer;
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar {
-	width: 2rem;
-}
-
-::-webkit-scrollbar-track {
-	border-left: 1px black solid;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #e39dff;
-	border-left: 1px black solid;
 }
 
 .notes__list-item {
@@ -213,7 +213,7 @@ button:focus {
 .mde-header {
 	background: linear-gradient(45deg, #e39dff, #ffff9c);
 	padding-inline: var(--notes-padding);
-	height: 4rem;
+	min-height: 4rem;
 	border-bottom: 0 solid black;
 	border-radius: 0;
 	align-items: center;
