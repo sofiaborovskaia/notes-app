@@ -102,7 +102,7 @@ button:focus {
 .sidebar {
 	overflow-y: auto;
 	width: 20%;
-	height: 100vh;
+	/* min-height: 100vh; */
 }
 
 .sidebar * {
@@ -134,7 +134,7 @@ button:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #ffff9c;
+	background: #e39dff;
 	border: 1px green solid;
 	border-right: none;
 }
